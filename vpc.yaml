@@ -77,8 +77,7 @@ Resources:
       Tags:
       - Key: Name
         Value: !Sub ${AWS::StackName}-Private-Subnet
-        
-   PrivateSubnetC:
+  PrivateSubnetC:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
@@ -86,7 +85,7 @@ Resources:
       AvailabilityZone: !Select [ 2, !GetAZs ]    # Get the third AZ in the list  
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Private-Subnet       
+        Value: !Sub ${AWS::StackName}-Private-Subnet    
   # Some route tables for our subnets:
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
