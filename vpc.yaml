@@ -49,7 +49,7 @@ Resources:
       Tags:
       - Key: Name
         Value: !Sub ${AWS::StackName}-Public-Subnet
-    PublicSubnetC:
+  PublicSubnetC:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
