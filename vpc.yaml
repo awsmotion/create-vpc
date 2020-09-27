@@ -189,7 +189,7 @@ Resources:
       Tags: 
       - Key: Name
         Value: !Sub NAT-${AWS::StackName}
-  ElasticIPAddress:
+  ElasticIPAddressA:
     Type: AWS::EC2::EIP
     Properties:
       Domain: VPC
@@ -202,7 +202,7 @@ Resources:
       Tags: 
       - Key: Name
         Value: !Sub NAT-${AWS::StackName}
-  ElasticIPAddress:
+  ElasticIPAddressB:
     Type: AWS::EC2::EIP
     Properties:
       Domain: VPC
@@ -215,7 +215,7 @@ Resources:
       Tags: 
       - Key: Name
         Value: !Sub NAT-${AWS::StackName}
-  ElasticIPAddress:
+  ElasticIPAddressC:
     Type: AWS::EC2::EIP
     Properties:
       Domain: VPC
