@@ -130,7 +130,7 @@ Resources:
     Properties:
       SubnetId: !Ref PublicSubnetB
       RouteTableId: !Ref PublicRouteTable
-    PublicSubnetCRouteTableAssociation:
+  PublicSubnetCRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId: !Ref PublicSubnetC
