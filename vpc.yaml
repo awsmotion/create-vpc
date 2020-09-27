@@ -39,7 +39,7 @@ Resources:
       AvailabilityZone: !Select [ 0, !GetAZs ]    # Get the first AZ in the list        
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Public-Subnet
+        Value: !Sub ${AWS::StackName}-Public-Subnet-A
   PublicSubnetB:
     Type: AWS::EC2::Subnet
     Properties:
@@ -48,7 +48,7 @@ Resources:
       AvailabilityZone: !Select [ 1, !GetAZs ]    # Get the second AZ in the list  
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Public-Subnet
+        Value: !Sub ${AWS::StackName}-Public-Subnet-B
   PublicSubnetC:
     Type: AWS::EC2::Subnet
     Properties:
@@ -57,7 +57,7 @@ Resources:
       AvailabilityZone: !Select [ 2, !GetAZs ]    # Get the third AZ in the list        
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Public-Subnet
+        Value: !Sub ${AWS::StackName}-Public-Subnet-C
         
   PrivateSubnetA:
     Type: AWS::EC2::Subnet
@@ -67,7 +67,7 @@ Resources:
       AvailabilityZone: !Select [ 0, !GetAZs ]    # Get the first AZ in the list  
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Private-Subnet
+        Value: !Sub ${AWS::StackName}-Private-Subnet-A
   PrivateSubnetB:
     Type: AWS::EC2::Subnet
     Properties:
@@ -76,7 +76,7 @@ Resources:
       AvailabilityZone: !Select [ 1, !GetAZs ]    # Get the second AZ in the list  
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Private-Subnet
+        Value: !Sub ${AWS::StackName}-Private-Subnet-B
   PrivateSubnetC:
     Type: AWS::EC2::Subnet
     Properties:
@@ -85,7 +85,7 @@ Resources:
       AvailabilityZone: !Select [ 2, !GetAZs ]    # Get the third AZ in the list  
       Tags:
       - Key: Name
-        Value: !Sub ${AWS::StackName}-Private-Subnet    
+        Value: !Sub ${AWS::StackName}-Private-Subnet-C    
   # Some route tables for our subnets:
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
@@ -93,7 +93,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
       - Key: Name
-        Value: Public
+        Value: Public-Route
   PublicRoute1:   # Public route table has direct routing to IGW:
     Type: AWS::EC2::Route
     DependsOn: AttachGateway
@@ -109,7 +109,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
       - Key: Name
-        Value: Private
+        Value: Private-Route-A
   PrivateRoute1:            # Private route table can access web via NAT (created below)
     Type: AWS::EC2::Route
     Properties:
@@ -124,7 +124,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
       - Key: Name
-        Value: Private
+        Value: Private-Route-B
   PrivateRoute2:            # Private route table can access web via NAT (created below)
     Type: AWS::EC2::Route
     Properties:
@@ -139,7 +139,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
       - Key: Name
-        Value: Private
+        Value: Private-Route-C
   PrivateRoute3:            # Private route table can access web via NAT (created below)
     Type: AWS::EC2::Route
     Properties:
