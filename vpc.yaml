@@ -5,8 +5,8 @@ Description:  This template deploys a VPC, with a pair of public and private sub
 
 Parameters:
   EnvironmentName: Spirohome
-    Description: Spirohome VPC
-    Type: String
+  Description: Spirohome VPC
+  Type: String
 
   VpcCIDR:
     Description: Please enter the IP range (CIDR notation) for this VPC
