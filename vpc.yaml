@@ -188,7 +188,7 @@ Resources:
       SubnetId: !Ref PublicSubnetA
       Tags: 
       - Key: Name
-        Value: !Sub NAT-${AWS::StackName}
+        Value: !Sub NAT-${AWS::StackName}-A
   ElasticIPAddressA:
     Type: AWS::EC2::EIP
     Properties:
@@ -201,7 +201,7 @@ Resources:
       SubnetId: !Ref PublicSubnetB
       Tags: 
       - Key: Name
-        Value: !Sub NAT-${AWS::StackName}
+        Value: !Sub NAT-${AWS::StackName}-B
   ElasticIPAddressB:
     Type: AWS::EC2::EIP
     Properties:
@@ -214,7 +214,7 @@ Resources:
       SubnetId: !Ref PublicSubnetC
       Tags: 
       - Key: Name
-        Value: !Sub NAT-${AWS::StackName}
+        Value: !Sub NAT-${AWS::StackName}-C
   ElasticIPAddressC:
     Type: AWS::EC2::EIP
     Properties:
