@@ -184,7 +184,7 @@ Resources:
   NATGatewayA:
     Type: AWS::EC2::NatGateway
     Properties: 
-      AllocationId: !GetAtt ElasticIPAddress.AllocationId
+      AllocationId: !GetAtt ElasticIPAddressA.AllocationId
       SubnetId: !Ref PublicSubnetA
       Tags: 
       - Key: Name
@@ -197,7 +197,7 @@ Resources:
   NATGatewayB:
     Type: AWS::EC2::NatGateway
     Properties: 
-      AllocationId: !GetAtt ElasticIPAddress.AllocationId
+      AllocationId: !GetAtt ElasticIPAddressB.AllocationId
       SubnetId: !Ref PublicSubnetB
       Tags: 
       - Key: Name
@@ -210,7 +210,7 @@ Resources:
   NATGatewayC:
     Type: AWS::EC2::NatGateway
     Properties: 
-      AllocationId: !GetAtt ElasticIPAddress.AllocationId
+      AllocationId: !GetAtt ElasticIPAddressC.AllocationId
       SubnetId: !Ref PublicSubnetC
       Tags: 
       - Key: Name
