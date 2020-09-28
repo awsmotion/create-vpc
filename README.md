@@ -4,6 +4,9 @@ Customer currently using Microsoft Azure and their existing environment located 
 
 This project aims to migrate customer's applications from Azure to AWS without interruption and smoothly.
 
+![Spirohome (4)](https://user-images.githubusercontent.com/68296051/94397315-ddd44c00-0163-11eb-815f-df8956921889.jpg)
+
+
 Customer application will be designed in a two-tier architecture pattern. Application logic is implemented in an EC2 server managed by AWS Elastic Beanstalk and Data tier is implemented in RDS and AWS Managed DocumentDB. Both tiers are scalable. For infrastructure administration and maintenance, a Bastion host is deployed in each public subnet for 3 AZ. It is a highly secured and created from a prebuilt AMI provided by AWS. It will allow ssh connection only from a trusted IP source. Application servers and Database servers are hosted in private subnets. It can be only accessed from the Bastion host. Servers can be connected only by key pair authentication to avoid vulnerabilities. App server can access the internet through NAT gateway for software installation.
 
 Elastic load balancer is a user-facing component to accept the web requests in Customer application. This traffic is routed to the backend EC2 servers implemented by Beanstalk service. Backend server takes care of processing the web request and return the response to ELB which is then consumed by the end-user. ELB is deployed in a public subnet and it is secured by a VPC security group which will allow only http/https inbound traffic from external sources. ELB will only access the back end servers either by http/https protocol. To ensure high availability and uniform distribution of traffic, we have enabled cross-zone load balancing. Apart from that, we have configured the load balancer to support session persistence, maintaining idle timeout between the load balancer and the client.
