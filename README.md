@@ -1,5 +1,9 @@
 # create-vpc
 AWS VPC Creation
+
+###AWS VPC Creation using CloudFormation
+VPC.yaml an AWS CloudFormation YAML template for configuring a VPC  with 6 subnets (3 public, 3 private) across 3 Availability Zones and a NAT Gateway is used to provide egress for each private subnets.
+
 Customer currently using Microsoft Azure and their existing environment located in Azure Datacenter. They are using Azure WepApps, CosmosDB and Azure SQL Database services on Azure. They’ve created Azure App service with Node.js platform.
 
 This project aims to migrate customer's applications from Azure to AWS without interruption and smoothly.
