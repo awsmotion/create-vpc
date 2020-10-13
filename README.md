@@ -8,7 +8,8 @@ Customer currently using Microsoft Azure and their existing environment located 
 
 This project aims to migrate customer's applications from Azure to AWS without interruption and smoothly.
 
-![Spirohome (4)](https://user-images.githubusercontent.com/68296051/94397315-ddd44c00-0163-11eb-815f-df8956921889.jpg)
+![Spirohome (5)](https://user-images.githubusercontent.com/68296051/95824684-03e71800-0d30-11eb-9443-e0b32be8aa15.jpg)
+
 
 
 Customer application will be designed in a two-tier architecture pattern. Application logic is implemented in an EC2 server managed by AWS Elastic Beanstalk and Data tier is implemented in RDS and AWS Managed DocumentDB. Both tiers are scalable. For infrastructure administration and maintenance, a Bastion host is deployed in each public subnet for 3 AZ. It is a highly secured and created from a prebuilt AMI provided by AWS. It will allow ssh connection only from a trusted IP source. Application servers and Database servers are hosted in private subnets. It can be only accessed from the Bastion host. Servers can be connected only by key pair authentication to avoid vulnerabilities. App server can access the internet through NAT gateway for software installation.
