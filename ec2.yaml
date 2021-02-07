@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+# This CloudFormation template deploys a basic EC2 instance
+
+
+
+Resources:
+  MyEc2FirstInstance:
+    Type: AWS::EC2::instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: MyKeyPair
+      ImageId: 
+      SecurityGroup: 
