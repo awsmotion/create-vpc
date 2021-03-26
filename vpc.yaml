@@ -19,7 +19,7 @@ Resources:
       - Key: Name
         Value:  !Join ['', [!Ref "AWS::StackName", "-VPC" ]]
 
-  # Our VPC will need internet access. So we will create a IGW and attach to it:      
+  # Our VPC will need internet access. So we will create a IGW and attach to its:      
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     DependsOn: VPC
